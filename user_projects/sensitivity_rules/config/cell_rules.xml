@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<behavior_rulesets>
+    <behavior_ruleset name="rgc">
+        <behavior name="chemotactic response to rgc_taxis_factor">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>1</max_response>
+                <signal name="current cycle phase index" type="heaviside">
+                    <threshold>1.01</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="migration speed">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>1</max_response>
+                <signal name="current cycle phase index" type="heaviside">
+                    <threshold>1.01</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="exit from cycle phase 0">
+            <decreasing_signals>
+                <max_response>0.00142275</max_response>
+                <signal name="time">
+                    <half_max>5305</half_max>
+                    <hill_power>8</hill_power>
+                    <reference>
+                        <type>increasing</type>
+                        <value>1440</value>
+                    </reference>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </decreasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_6 and layer_6">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="sym">
+                        <type>decreasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_5 and layer_5">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="sym">
+                        <type>decreasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_4 and layer_4">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="sym">
+                        <type>decreasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_3 and layer_3">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="sym">
+                        <type>decreasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_2 and layer_2">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="sym">
+                        <type>decreasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_6">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.25</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_5">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.25</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>2</signal_min>
+                        <signal_max>3.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_4">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.25</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>2</signal_min>
+                        <signal_max>3.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_3">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.75</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>2</signal_min>
+                        <signal_max>3.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_2">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.75</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>2</signal_min>
+                        <signal_max>3.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and ipc">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.75</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <max_response>0.75</max_response>
+                    <signal name="custom:notch" type="linear" ID="asym_i_in">
+                        <type>increasing</type>
+                        <signal_min>0.5</signal_min>
+                        <signal_max>2</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_i_de">
+                        <type>decreasing</type>
+                        <signal_min>2</signal_min>
+                        <signal_max>3.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and layer_6">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_in">
+                        <type>increasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_de">
+                        <type>decreasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and layer_5">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_in">
+                        <type>increasing</type>
+                        <signal_min>1.5</signal_min>
+                        <signal_max>3</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_de">
+                        <type>decreasing</type>
+                        <signal_min>3</signal_min>
+                        <signal_max>4.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and layer_4">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_in">
+                        <type>increasing</type>
+                        <signal_min>1.5</signal_min>
+                        <signal_max>3</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_de">
+                        <type>decreasing</type>
+                        <signal_min>3</signal_min>
+                        <signal_max>4.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and layer_3">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_in">
+                        <type>increasing</type>
+                        <signal_min>1.5</signal_min>
+                        <signal_max>3</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_de">
+                        <type>decreasing</type>
+                        <signal_min>3</signal_min>
+                        <signal_max>4.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and layer_2">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_in">
+                        <type>increasing</type>
+                        <signal_min>1.5</signal_min>
+                        <signal_max>3</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_r_de">
+                        <type>decreasing</type>
+                        <signal_min>3</signal_min>
+                        <signal_max>4.5</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to rgc and ipc">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.25</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_ir_in">
+                        <type>increasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="custom:notch" type="linear" ID="asym_ir_de">
+                        <type>decreasing</type>
+                        <signal_min>0.0</signal_min>
+                        <signal_max>0.0</signal_max>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to G1_dead and G1_dead">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside">
+                        <threshold>10</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="elapsed time in phase" type="heaviside">
+                        <threshold>30</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="current cycle phase index" type="heaviside">
+                        <threshold>2.5</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="apoptosis">
+            <increasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>1.0</max_response>
+                <signal name="time" type="heaviside">
+                    <threshold>10200</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+    </behavior_ruleset>
+    <behavior_ruleset name="ipc">
+        <behavior name="migration speed">
+            <increasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>1</max_response>
+                <signal name="contact with rgc" type="heaviside">
+                    <threshold>1.5</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="exit from cycle phase 0">
+            <decreasing_signals>
+                <max_response>0.00063717</max_response>
+                <signal name="time">
+                    <half_max>5305</half_max>
+                    <hill_power>5</hill_power>
+                    <reference>
+                        <type>increasing</type>
+                        <value>1440</value>
+                    </reference>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </decreasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_6">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.045</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_5">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.045</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_4">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.045</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_3">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.045</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to ipc and layer_2">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.045</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_6 and layer_6">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.29</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_5 and layer_5">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.29</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_4 and layer_4">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.29</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_3 and layer_3">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.29</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_2 and layer_2">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.29</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_6 and dying">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.66</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>1440</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_5 and dying">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.66</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>4320</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_4 and dying">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.66</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>5760</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_3 and dying">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.66</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>7200</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to layer_2 and dying">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>0.66</max_response>
+                <signal type="aggregator">
+                    <aggregator>product</aggregator>
+                    <signal name="time" type="heaviside" ID="1">
+                        <type>increasing</type>
+                        <threshold>8640</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                    <signal name="time" type="heaviside" ID="2">
+                        <type>decreasing</type>
+                        <threshold>10080</threshold>
+                        <applies_to_dead>0</applies_to_dead>
+                    </signal>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="apoptosis">
+            <increasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>1.0</max_response>
+                <signal name="time" type="heaviside">
+                    <threshold>10300</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+        <behavior name="extended asymmetric division to G1_dead and G1_dead">
+            <mediator>neutral</mediator>
+            <increasing_signals>
+                <aggregator>product</aggregator>
+                <max_response>1.0</max_response>
+                <signal name="time" type="heaviside">
+                    <threshold>10</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+                <signal name="elapsed time in phase" type="heaviside">
+                    <threshold>30</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+                <signal name="current cycle phase index" type="heaviside">
+                    <threshold>2.5</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+        </behavior>
+    </behavior_ruleset>
+    <behavior_ruleset name="subplate">
+        <behavior name="migration speed">
+            <increasing_signals>
+                <aggregator>sum</aggregator>
+                <max_response>0.16</max_response>
+                <signal name="time">
+                    <half_max>5940</half_max>
+                    <hill_power>2</hill_power>
+                    <reference>
+                        <type>increasing</type>
+                        <value>1440</value>
+                    </reference>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+                <signal name="contact with ipc">
+                    <type>increasing</type>
+                    <half_max>1</half_max>
+                    <hill_power>2</hill_power>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </increasing_signals>
+            <decreasing_signals>
+                <aggregator>first</aggregator>
+                <max_response>0.05</max_response>
+                <signal name="time" type="heaviside">
+                    <threshold>7200</threshold>
+                    <applies_to_dead>0</applies_to_dead>
+                </signal>
+            </decreasing_signals>
+        </behavior>
+    </behavior_ruleset>
+</behavior_rulesets>

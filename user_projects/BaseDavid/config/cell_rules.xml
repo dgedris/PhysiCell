@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<behavior_rulesets>
+  <behavior_ruleset name="rgc">
+    <behavior name="migration speed">
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0</max_response>
+        <signal name="contact with apical" type="heaviside">
+          <threshold>0.5</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="cycle entry">
+      <decreasing_signals>
+        <max_response>0.00085</max_response>
+        <signal name="time">
+          <half_max>4808</half_max>
+          <hill_power>10</hill_power>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="asymmetric division to layer_6">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>1440</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>3309</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="asymmetric division to layer_5">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>3309</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>7068</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="asymmetric division to layer_4">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>7068</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>8638</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="asymmetric division to layer_3">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>8638</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>10799</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="asymmetric division to layer_2">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>10799</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+      <decreasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>0.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>12960</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </decreasing_signals>
+    </behavior>
+    <behavior name="apoptosis">
+      <increasing_signals>
+        <aggregator>first</aggregator>
+        <max_response>1.0</max_response>
+        <signal name="time" type="heaviside">
+          <threshold>12960</threshold>
+          <applies_to_dead>0</applies_to_dead>
+        </signal>
+      </increasing_signals>
+    </behavior>
+  </behavior_ruleset>
+</behavior_rulesets>
