@@ -1329,10 +1329,10 @@ void asymmetric_division_function( Cell* pCell_parent, Cell* pCell_daughter )
 	// needs depends on how many probabilities it sums and how they are computed.
 	const double tolerance = PhysiCell_settings.asymmetric_division_probability_tolerance;
 	double total = parent_asym_div.probabilities_total();
-	if (total > 1.0 + tolerance)
+	if (total > 1.0)
 	{
 		double sym_div_prob = parent_asym_div.asymmetric_division_probability(parent_type, parent_type) + 1.0 - total;
-		if (sym_div_prob < -tolerance)
+		if (sym_div_prob > 1.0 + tolerance)
 		{
 			std::cerr << "Error: Asymmetric division probabilities for " + parent_name + " sum to greater than 1.0 and cannot be normalized." << std::endl;
 			std::cerr << "Adjusted sym_div_prob = " << sym_div_prob << std::endl;
